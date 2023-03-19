@@ -4,6 +4,6 @@ typeof Infinity
 console.log(0 && '' && []);
 
 typeof Math;
-console.log(typeof 1n);
+console.log((8 / 2 + 5 - -3 / 2));
 
-let a = 5; console.log(++a); console.log(a++);
+let a; console.log(a)
