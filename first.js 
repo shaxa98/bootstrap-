@@ -4,4 +4,4 @@ typeof Infinity
 console.log(0 && '' && []);
 
 typeof Math;
-console.log( '123' == 12);
+console.log( null===undefined);
