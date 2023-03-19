@@ -4,4 +4,4 @@ typeof Infinity
 console.log(0 && '' && []);
 
 typeof Math;
-console.log(typeof alert);
+console.log( 0 || 1 && 2 || 3);
