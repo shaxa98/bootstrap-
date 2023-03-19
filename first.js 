@@ -4,4 +4,4 @@ typeof Infinity
 console.log(0 && '' && []);
 
 typeof Math;
-console.log('80' + 71.2);
+console.log(Boolean('0')==Boolean(0));
