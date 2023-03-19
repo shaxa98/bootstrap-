@@ -4,5 +4,4 @@ typeof Infinity
 console.log(0 && '' && []);
 
 typeof Math;
-console.log(isNaN(''));
-let v = (!!'0'); console.log(v);
+console.log(typeof Math);
