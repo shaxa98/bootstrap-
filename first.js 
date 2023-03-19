@@ -7,3 +7,5 @@ typeof Math;
 console.log((8 / 2 + 5 - -3 / 2));
 
 let a; console.log(a)
+
+let name = 'Vasia'; name[3] = 'y'; console.log(name);
