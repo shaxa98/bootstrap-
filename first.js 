@@ -4,4 +4,4 @@ typeof Infinity
 console.log(0 && '' && []);
 
 typeof Math;
-console.log(12 && '12');
+console.log(1.15 + 2.30);
