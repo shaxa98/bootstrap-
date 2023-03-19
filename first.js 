@@ -9,3 +9,4 @@ console.log((8 / 2 + 5 - -3 / 2));
 let a; console.log(4 * 'five');
 
 let rs = 'true'; console.log(rs)
+const name = 'Vasia'; Math.abs(name.length - 15);
