@@ -1,13 +1,4 @@
+const numbers = [1, 2, 3, 4, 5];
 
-typeof Infinity
-
-console.log(0 && '' && []);
-
-typeof Math;
-console.log((8 / 2 + 5 - -3 / 2));
-
-let a; console.log(4 * 'five');
-
-//let rs = 'true'; console.log(rs)
-//const name = 'Vasia'; Math.abs(name.length - 15);
- let i = 10; while (i < 10) {...}
+const filtered = numbers.filtered(n=> n>= 0);
+const items = filtered.map (n => )
