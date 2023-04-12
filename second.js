@@ -7,7 +7,7 @@
 const mainBanner = document.getElementById("main");
 console.log(mainBanner);
 
-const card = ['<div class="card">
+const card = [ {'<div class="card">
 <img
   src="https://static.tvmaze.com/uploads/images/medium_portrait/424/1061886.jpg"
   class="card-img-top"
@@ -17,6 +17,6 @@ const card = ['<div class="card">
   <h5 class="card-title">FBI</h5>
   <p class="card-text">Obligation</p>
 </div>
-</div>'];
+</div>'}];
 
 mainBanner.push(card);
