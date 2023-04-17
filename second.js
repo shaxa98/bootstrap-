@@ -5,6 +5,7 @@ const registerSuccessBanner = document.getElementById(
 );
 const loginForm = document.getElementById("login-form");
 const clickToLoginBtn = document.getElementById("clickToLoginBtn");
+
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -22,28 +23,128 @@ const moviesContainer = document.getElementById("movies-container");
 const searchIcon = document.getElementById("search-icon");
 const search = document.getElementById("search-btn");
 
-// const numbers = [1, 2, 3, 4, 5];
+navbarLogo.onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  registerForm.classList.add("d-none");
+  mainBanner.classList.remove("d-none");
+};
+whatchShow.onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  registerForm.classList.add("d-none");
+  mainBanner.classList.remove("d-none");
+};
+navbarLogin.onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  registerForm.classList.add("d-none");
+  mainBanner.classList.add("d-none");
+  loginForm.classList.remove("d-none");
+};
+navbarRegister.onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.add("d-none");
+  loginSucsesBaner.classList.add("d-none");
+  loginUnsucsesBaner.classList.add("d-none");
+  mainBanner.classList.add("d-none");
+  registerForm.classList.remove("d-none");
+};
 
-// const filtered = numbers.filter((n) => n >= 0);
-// const items = filtered.map((n) => "<li>" + n + "<li>");
-// console.log(items);
+const users = [
+  {
+    username: "shaxa",
+    email: "shaxa@mail.com",
+    password: "12345678",
+  },
+  {
+    username: "shaxa98",
+    email: "shaxa@ooo.oo",
+    password: "4321",
+  },
+];
 
-// const mainBanner = document.getElementById("main");
-// console.log(mainBanner);
+registerSubmitBtn.onclick = () => {
+  const user = {
+    username: username.value,
+    email: email.value,
+    password: password.value,
+  };
+  users.push(user);
+  registerForm.classList.add("d-none");
+  registerSuccessBanner.classList.remove("d-none");
+  console.log("users: ", users);
+};
 
-// const card = [ {'<div class="card">
-// <img
-//   src="https://static.tvmaze.com/uploads/images/medium_portrait/424/1061886.jpg"
-//   class="card-img-top"
-//   alt="..."
-// />
-// <div class="card-body">
-//   <h5 class="card-title">FBI</h5>
-//   <p class="card-text">Obligation</p>
-// </div>
-// </div>'}];
+clickToLoginBtn.onclick = () => {
+  registerSuccessBanner.classList.add("d-none");
+  loginForm.classList.remove("d-none");
+};
 
-// mainBanner.push(card);
+clicToLogin.onclick = () => {
+  loginForm.classList.add("d-none");
+  // let userHast = false;
+
+  // User hast nabudagesha meyobad
+  // for (let i = 0; i < users.length; i++) {
+  //   let user = users[i];
+  //   if (user.email === loginEmail.value && user.password === loginPassword.value) {
+  //     userHast = true;
+  //     break;
+  //   }
+  // }
+
+  // forof in baroyi array
+  // forin baroyi object
+  // for (const user of users) {
+  //   if (
+  //     user.email === loginEmail.value &&
+  //     user.password === loginPassword.value
+  //   ) {
+  //     userHast = true;
+  //     break;
+  //   }
+  // }
+
+  // users.forEach((user)=> {
+  //   if (
+  //     user.email === loginEmail.value &&
+  //     user.password === loginPassword.value
+  //   ) {
+  //     userHast = true;
+  //   }
+  //       })
+
+  const userHast = users.some(
+    (user) =>
+      user.email === loginEmail.value && user.password === loginPassword.value
+  );
+
+  if (userHast === true) {
+    loginSucsesBaner.classList.remove("d-none");
+  } else {
+    loginUnsucsesBaner.classList.remove("d-none");
+  }
+};
+
+const movieCard = (imgUrl, title, description) => {
+  return `<div class="card">
+  <img
+  src="${imgUrl}"
+  class="card-img-top"
+  alt="..."
+  />
+  <div class="card-body">
+  <h5 class="card-title">${title}</h5>
+  <p class="card-text">${description}</p>
+  </div>
+  </div>`;
+};
 
 const movies = [
   {
@@ -107,6 +208,15 @@ const movies = [
     description: "Magic Johnson",
   },
 ];
+
+// let moviesHTML = "";
+// for (const movie of movies) {
+//   const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+//   moviesHTML += movieHTML;
+// }
+// moviesContainer.innerHTML = moviesHTML;
+
+//search function
 
 let fsearch = "";
 searchIcon.onclick = () => {
