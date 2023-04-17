@@ -82,9 +82,34 @@ const movies = [
     title: "The Best of All the Smoke with Matt Barnes and Stephen Jackson",
     description: "Magic Johnson",
   },
-];
-const kob = "This Is Mark Rober";
-const find = movies.find(function (search) {
-  return search.title === kob;
-});
-console.log(find);
+// ];
+// const kob = "This Is Mark Rober";
+// const find = movies.find(function (search) {
+//   return search.title === kob;
+// });
+// console.log(find);
+// const function makeContainer (x) { 
+//   let moviesHTML = "";
+// for (const move of find) {
+//   const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+//   moviesHTML += movieHTML;
+// }
+// moviesContainer.innerHTML = moviesHTML;
+// }
+
+// makeContainer (movies);
+
+ function search (x) {
+  
+  x = "";
+  searchIcon.onclick = () => {
+    x = search.value;
+    const find = movies.filter(function (search) {
+      if (x === "") {
+        return true;
+      }
+      console.log(find);
+      return search.title === x;
+    });
+}
+search("Magic Johnson");
