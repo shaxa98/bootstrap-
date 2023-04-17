@@ -1,3 +1,27 @@
+const registerSubmitBtn = document.getElementById("register-submit");
+const registerForm = document.getElementById("regisration-form");
+const registerSuccessBanner = document.getElementById(
+  "regisration-success-bunner"
+);
+const loginForm = document.getElementById("login-form");
+const clickToLoginBtn = document.getElementById("clickToLoginBtn");
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const clicToLogin = document.getElementById("login-submit");
+const loginEmail = document.getElementById("login-email");
+const loginPassword = document.getElementById("login-password");
+const loginSucsesBaner = document.getElementById("login-success-bunner");
+const loginUnsucsesBaner = document.getElementById("login-unsuccess-bunner");
+const mainBanner = document.getElementById("main");
+const navbarLogin = document.getElementById("nav-login active");
+const navbarLogo = document.getElementById("navbar-brand");
+const navbarRegister = document.getElementById("nav-reg active");
+const whatchShow = document.getElementById("clickAfterLoginSuccessBtn");
+const moviesContainer = document.getElementById("movies-container");
+const searchIcon = document.getElementById("search-icon");
+const search = document.getElementById("search-btn");
+
 // const numbers = [1, 2, 3, 4, 5];
 
 // const filtered = numbers.filter((n) => n >= 0);
@@ -82,34 +106,35 @@ const movies = [
     title: "The Best of All the Smoke with Matt Barnes and Stephen Jackson",
     description: "Magic Johnson",
   },
-// ];
-// const kob = "This Is Mark Rober";
-// const find = movies.find(function (search) {
-//   return search.title === kob;
-// });
-// console.log(find);
-// const function makeContainer (x) { 
-//   let moviesHTML = "";
-// for (const move of find) {
-//   const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
-//   moviesHTML += movieHTML;
-// }
-// moviesContainer.innerHTML = moviesHTML;
-// }
+];
 
-// makeContainer (movies);
+let fsearch = "";
+searchIcon.onclick = () => {
+  fsearch = search.value;
+  const find = movies.filter(function (search) {
+    if (fsearch === "") {
+      return true;
+    }
+    return search.title === fsearch;
+  });
+  let moviesHTML = "";
+  for (const movie of find) {
+    const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+    moviesHTML += movieHTML;
+  }
+  moviesContainer.innerHTML = moviesHTML;
+};
 
- function search (x) {
-  
-  x = "";
-  searchIcon.onclick = () => {
-    x = search.value;
-    const find = movies.filter(function (search) {
-      if (x === "") {
-        return true;
-      }
-      console.log(find);
-      return search.title === x;
-    });
+console.log(fsearch);
+const find = movies.filter(function (search) {
+  if (fsearch === "") {
+    return true;
+  }
+  return search.title === fsearch;
+});
+let moviesHTML = "";
+for (const movie of find) {
+  const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+  moviesHTML += movieHTML;
 }
-search("Magic Johnson");
+moviesContainer.innerHTML = moviesHTML;
