@@ -218,33 +218,33 @@ const movies = [
 
 //search function
 
-let fsearch = "";
-searchIcon.onclick = () => {
-  fsearch = search.value;
-  const find = movies.filter(function (search) {
-    if (fsearch === "") {
-      return true;
-    }
-    return search.title === fsearch;
-  });
-  let moviesHTML = "";
-  for (const movie of find) {
-    const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
-    moviesHTML += movieHTML;
-  }
-  moviesContainer.innerHTML = moviesHTML;
-};
+// let fsearch = "";
+// searchIcon.onclick = () => {
+//   fsearch = search.value;
+//   const find = movies.filter(function (search) {
+//     if (fsearch === "") {
+//       return true;
+//     }
+//     return search.title === fsearch;
+//   });
+//   let moviesHTML = "";
+//   for (const movie of find) {
+//     const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
+//     moviesHTML += movieHTML;
+//   }
+//   moviesContainer.innerHTML = moviesHTML;
+// };
 
-console.log(fsearch);
-const find = movies.filter(function (search) {
-  if (fsearch === "") {
-    return true;
-  }
-  return search.title === fsearch;
+const find = movies.findIndex(function (x) {
+  return x.title === "";
 });
-let moviesHTML = "";
-for (const movie of find) {
-  const movieHTML = movieCard(movie.imgUrl, movie.title, movie.description);
-  moviesHTML += movieHTML;
+console.log(find);
+if (find === -1) {
+  const erorHTML = `<h1
+class="lg:text-[10rem] text-[2.5rem] leading-[3.6rem] font-bold mb-8"
+data-v-fce19382=""
+>
+Eror or error
+</h1>`;
+  moviesContainer.innerHTML = erorHTML;
 }
-moviesContainer.innerHTML = moviesHTML;
